@@ -1,0 +1,40 @@
+.menu {
+  display: flex; /* Coloca os itens lado a lado */
+  list-style: none; /* Remove as bolinhas da lista */
+  gap: 20px; /* Cria um espaço entre as abas */
+  padding: 0;
+}
+
+.conteudo-aba {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.botao-aba {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #eee;
+  border: none;
+}
+.botao-aba.ativo {
+  background-color: #ccc;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

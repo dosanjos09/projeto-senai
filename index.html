@@ -4,20 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MinervArt</title>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="estilin.css">
+    <script src="juntatudo.js"></script>
 </head>
 <body>
    <nav>
     <img> <!--colocar a logo do projeto aqui-->
-    <li><a href="">Inicio</a></li>
-    <li><a href="">Pintura</a></li> <!--1-->
-    <li><a href="">Música</a></li> <!--2-->
-    <li><a href="">Cinema</a></li> <!--3-->
-    <li><a href="">Dança</a></li> <!--4-->
-    <li><a href="">Escultura</a></li> <!--5-->
-    <li><a href="">Literatura</a></li> <!--6-->
-    <li><a href="">Arquitetura</a></li> <!--7-->
+
    </nav>
+
+<div class="menu-abas">
+  <button class="botao-aba ativo" onclick="mudarAba(event, 'secoes')">Categorias gerais</button>
+  <button class="botao-aba" onclick="mudarAba(event, 'aba2')">Categorias específicas</button>
+</div>
+
+<!-- O conteúdo de cada aba -->
+<div id="secoes" class="conteudo-aba" style="display: block;">
+  <p>
+  <ul class="menu">
+    <li><a href="pintura.html">Pintura</a></li> <!--1-->
+    <li><a href="musica.html">Música</a></li> <!--2-->
+    <li><a href="cinema.html">Cinema</a></li> <!--3-->
+    <li><a href="danca.html">Dança</a></li> <!--4-->
+    <li><a href="escultura.html">Escultura</a></li> <!--5-->
+    <li><a href="literatura.html">Literatura</a></li> <!--6-->
+    <li><a href="arquitetura.html">Arquitetura</a></li> <!--7-->
+    <li><a href="moda.html">Moda</a></li>
+  </ul>
+    <p>
+</div>
+
+<div id="aba2" class="conteudo-aba" style="display: none;">
+  <h3>Conteúdo da Aba 2</h3>
+  <p>Este é o texto que aparece na segunda aba.</p>
+</div>
+
     <h1>MinervArt</h1>
    <h3>O mundo das artes, perto de você</h3>
    <br>
