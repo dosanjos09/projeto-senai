@@ -3,15 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MinervArt</title>
+    <title>MinervArt - Dança</title>
     <link rel="stylesheet" href="estilin.css">
     <script src="juntatudo.js"></script>
 </head>
+
 <body>
+
     <nav>
-       <li><a class="nav" href="index.html">Início</a></li>
+        <a class="nav" href="index.html">Início</a>
     </nav>
+
     <h1>Dança</h1>
+
     <h3>Quem não ouve a melodia acha maluco quem dança...</h3>
+
     <h5>Oswaldo Montenegro</h5>
+
+    <hr>
+
+    <h2>Estilos de dança</h2>
+
+    <div id="lista-dancas"></div>
+
+    <script>
+
+        fetch("/api/danca")
+            .then(response => response.json())
+            .then(dados => {
+
+                const lista = document.getElementById("lista-dancas");
+
+                dados.forEach(danca => {
+
+                    lista.innerHTML += `
+                        <div class="obra">
+                            <h3>${danca.nome}</h3>
+                            <hr>
+                        </div>
+                    `;
+
+                });
+
+            })
+            .catch(erro => console.error(erro));
+
+    </script>
+
 </body>
+</html>
