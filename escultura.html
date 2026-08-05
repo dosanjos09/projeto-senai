@@ -14,4 +14,24 @@
     <h1>Escultura</h1>
     <h3>"Como faço uma escultura? Simplesmente retiro do bloco de mármore tudo que não é necessário."</h3>
     <h5>Michelangelo</h5>
+
+    <script>
+        fetch("/api/escultura")
+            .then(response => response.json())
+            .then(dados => {
+                const lista = document.getElementById("lista-escultura");
+
+                dados.forEach(escultura => {
+                    lista.innerHTML += `
+                        <div class="obra">
+                            <h3>${escultura.nome}</h3>
+                            <p>${escultura.artista}</p>
+                            <hr>
+                        </div>
+                    `;
+                });
+            })
+            .catch(erro => console.error(erro));
+        </script>
 </body>
+</html>

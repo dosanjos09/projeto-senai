@@ -14,4 +14,26 @@
     <h1>Música</h1>
      <h3>"Sem a música a vida seria um erro."</h3>
     <h5>Friedrich Nietzsche</h5>
+
+    <div id="lista-musica"></div>
+
+    <script>
+        fetch("/api/musica")
+            .then(response => response.json())
+            .then(dados => {
+                const lista = document.getElementById("lista-musica");
+
+                dados.forEach(album => {
+                    lista.innerHTML += `
+                        <div class="obra">
+                            <h3>${album.nome}</h3>
+                            <p>${album.artista}</p>
+                            <hr>
+                        </div>
+                    `;
+                });
+            })
+            .catch(erro => console.error(erro));
+        </script>
 </body>
+</html>

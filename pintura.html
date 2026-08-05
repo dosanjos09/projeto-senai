@@ -22,37 +22,28 @@
 
     <hr>
 
-    <h2>Obras cadastradas</h2>
+    <h2>Obras cadastradas</h2> 
 
     <!-- Aqui serão exibidas as obras do banco -->
     <div id="lista-pinturas"></div>
 
     <script>
-
         fetch("/api/pintura")
             .then(response => response.json())
             .then(dados => {
-
                 const lista = document.getElementById("lista-pinturas");
 
                 dados.forEach(obra => {
-
                     lista.innerHTML += `
                         <div class="obra">
                             <h3>${obra.nome}</h3>
-                            <p><strong>Artista:</strong> ${obra.artista}</p>
+                            <p>${obra.artista}</p>
                             <hr>
                         </div>
                     `;
-
                 });
-
             })
-            .catch(erro => {
-                console.error("Erro:", erro);
-            });
-
-    </script>
+            .catch(erro => console.error(erro));
+        </script>
 
 </body>
-</html>
