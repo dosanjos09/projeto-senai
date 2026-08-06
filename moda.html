@@ -9,6 +9,31 @@
 </head>
 <body>
     <nav>
-       <li><a href="index.html">Início</a></li>
+       <li><a class="nav" href="index.html">Início</a></li>
     </nav>
+    <h1>Moda</h1>
+    <h3>"Vista-se mal e notarão o vestido. Vista-se bem e notarão a mulher."</h3>
+    <h5>Coco Chanel</h5>
+
+    <div id="lista-moda"></div>
+
+    <script>
+        fetch("/api/moda")
+            .then(response => response.json())
+            .then(dados => {
+                const lista = document.getElementById("lista-moda");
+
+                dados.forEach(moda => {
+                    lista.innerHTML += `
+                        <div class="obra">
+                            <h3>${moda.nome}</h3>
+                            <p>${moda.artista}</p>
+                            <hr>
+                        </div>
+                    `;
+                });
+            })
+            .catch(erro => console.error(erro));
+        </script>
 </body>
+</html>
